@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>elementvoll — Arhitektura & Građevina</title>
+  <meta name="description" content="Projektovanje, nadzor i izvođenje — od ideje do realizacije.">
+  <meta property="og:title" content="elementvoll — Arhitektura & Građevina">
+  <meta property="og:description" content="Projektovanje, nadzor i izvođenje — od ideje do realizacije.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preload" as="image" href="assets/img/hero.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/img/logo1.png">
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="#home" aria-label="elementvoll — početna">
+    <img src="assets/img/logo1.png" alt="elementvoll">
+  </a>
+  <nav class="nav">
+    <a href="#about">O nama</a>
+    <a href="#services">Usluge</a>
+    <a href="#csr">ESG</a>
+    <a href="#offices">Lokacije</a>
+    <a href="contact.html">Kontakt</a>
+  </nav>
+</header>
+
+<main class="snap" id="home">
+  <!-- HERO -->
+  <section class="panel hero">
+    <div class="inner">
+      <h1>Arhitektura i građevina sa fokusom na vrijednost.</h1>
+      <p>Projektovanje, nadzor i izvođenje objekata — od ideje do realizacije.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="panel about has-bg" id="about">
+    <div class="inner">
+      <h2>Ko smo</h2>
+      <p>Ovde ide tekst: stručnost, pristup, licence, reference… Ovo ćemo lako zamijenit.</p>
+      <a class="btn" href="#services">Šta radimo</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="panel services has-bg" id="services">
+    <div class="inner">
+      <h2 style="margin-bottom:18px">Usluge</h2>
+
+      <div class="grid" id="servicesGrid">
+        <article class="card" data-more="Idejna, glavna i izvedbena dokumentacija. BIM/3D modelovanje, usklađivanje struka, tehničke specifikacije i troškovnici.">
+          <img src="assets/img/service-design.jpg" alt="Projektovanje" />
+          <h3>Projektovanje</h3>
+          <p>Ovde se samo zamijeni tekst kasnije…</p>
+        </article>
+
+        <article class="card" data-more="Stručni nadzor, kontrola kvaliteta, dnevnik radova i izveštaji, bezbednost na radu, usklađenost sa propisima i normama.">
+          <img src="assets/img/service-supervision.jpg" alt="Nadzor" />
+          <h3>Nadzor</h3>
+          <p>Ovde se samo zamijeni tekst kasnije…</p>
+        </article>
+
+        <article class="card" data-more="Design & Build pristup, koordinacija izvođača, logistika, upravljanje rokovima i budžetom, kontrola napretka i završnih radova.">
+          <img src="assets/img/service-construction.jpg" alt="Izvođenje" />
+          <h3>Izvođenje</h3>
+          <p>Ovde se samo zamijeni tekst kasnije…</p>
+        </article>
+
+        <article class="card" data-more="Toplotna izolacija i fasade, zelene krovne i fasadne površine, solarni sistemi, energetski proračuni i sertifikacija objekata.">
+          <img src="assets/img/service-green.jpg" alt="Energetska efikasnost" />
+          <h3>Energetska efikasnost</h3>
+          <p>Ovde se samo zamijeni tekst kasnije…</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESG (bez partner logotipa) -->
+  <section class="panel csr has-bg" id="csr">
+    <div class="inner">
+      <h2>ESG / Društvena odgovornost</h2>
+      <p>Kratko o standardima, bezbednosti na radu, održivosti i doprinosu zajednici.</p>
+    </div>
+  </section>
+
+  <!-- OFFICES -->
+  <section class="panel offices has-bg" id="offices">
+    <div class="inner cols">
+      <div>
+        <h2>Lokacije</h2>
+        <ul class="offices-list">
+          <li><strong>Berlin</strong> — Ulica 5</li>
+          <li><strong>Rudesdorf</strong> — Ulica 45</li>
+          <li><strong>Strausberg</strong> — Ulica 7</li>
+        </ul>
+      </div>
+      <address class="contact-block">
+        <h3>Kontakt</h3>
+        <p>T: +381 xx xxx xxxx</p>
+        <p>E: <a href="mailto:studio@example.com">jasko.alic@xxxxxx</a></p>
+        <a class="btn" href="contact.html">Pošalji upit</a>
+      </address>
+    </div>
+  </section>
+</main>
+
+<!-- Fokus overlay za kartice -->
+<div id="cardFocus" class="card-focus" aria-hidden="true"></div>
+
+<!-- MALI beli heksagon logo u donjem desnom uglu (globalno) -->
+<div class="site-badge" aria-hidden="true">
+  <img src="assets/img/logo2.png" alt="">
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

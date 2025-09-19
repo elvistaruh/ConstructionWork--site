@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt — elementvoll</title>
+  <meta name="description" content="Pošaljite upit – odgovaramo u najkraćem roku.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/img/logo1.png">
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="index.html#home" aria-label="elementvoll — početna">
+    <img src="assets/img/logo1.png" alt="elementvoll">
+  </a>
+  <nav class="nav">
+    <a href="index.html#about">O nama</a>
+    <a href="index.html#services">Usluge</a>
+    <a href="index.html#csr">ESG</a>
+    <a href="index.html#offices">Lokacije</a>
+    <a href="contact.html">Kontakt</a>
+  </nav>
+</header>
+
+<main class="panel contact-page has-bg">
+  <div class="inner">
+    <h1>Kontakt</h1>
+    <p>Pošaljite nam upit i odgovorićemo u najkraćem roku.</p>
+
+    <form class="form" action="#" method="POST" novalidate>
+      <div class="form-grid">
+        <label class="field">
+          <span class="label">Ime i prezime</span>
+          <input type="text" name="name" required />
+        </label>
+
+        <label class="field">
+          <span class="label">Email</span>
+          <input type="email" name="email" required />
+        </label>
+
+        <label class="field">
+          <span class="label">Telefon (opciono)</span>
+          <input type="tel" name="phone" />
+        </label>
+      </div>
+
+      <label class="field">
+        <span class="label">Poruka</span>
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+
+      <label class="consent">
+        <input type="checkbox" name="consent" required />
+        Slažem se sa obradom ličnih podataka radi odgovora na upit.
+      </label>
+
+      <button class="btn" type="submit">Pošalji</button>
+    </form>
+  </div>
+</main>
+
+<!-- MALI beli heksagon logo u donjem desnom uglu (globalno) -->
+<div class="site-badge" aria-hidden="true">
+  <img src="assets/img/logo2.png" alt="">
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

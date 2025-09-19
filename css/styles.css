@@ -1,0 +1,136 @@
+:root{
+  --bg:#0f1115; --fg:#f5f5f5; --muted:#9a9fa6;
+  --accent:#e0b000; --card:#16181f; --hair:rgba(255,255,255,.08);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;color:var(--fg);background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+
+/* ===== Header ===== */
+.site-header{
+  position:fixed; inset:0 0 auto 0; height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 24px; z-index:10;
+  background:rgba(15,17,21,.45);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--hair);
+}
+.logo img{
+  height:32px; width:auto; display:block; object-fit:contain;
+  filter:brightness(0) invert(1); /* crni PNG -> belo */
+}
+.nav a{color:var(--fg); text-decoration:none; margin-left:20px; opacity:.9; font-weight:500}
+.nav a:hover{opacity:1}
+
+/* ===== MALI beli heksagon u donjem desnom uglu (globalno) ===== */
+.site-badge{
+  position:fixed; right:16px; bottom:16px; z-index:40;
+  opacity:.55; pointer-events:none; /* dekorativno, ne klika se */
+  transform:translateZ(0);
+}
+.site-badge img{
+  height:34px; width:auto; display:block; filter:brightness(0) invert(1);
+}
+@media (max-width:640px){
+  .site-badge{ right:12px; bottom:12px; opacity:.45 }
+  .site-badge img{ height:28px }
+}
+
+/* ===== Layout sekcija ===== */
+.snap{scroll-snap-type:y mandatory; height:100vh; overflow-y:auto; scroll-behavior:smooth}
+.panel{
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  padding:96px 24px 48px; scroll-snap-align:start; border-bottom:1px solid var(--hair);
+  scroll-margin-top:64px;
+}
+.inner{max-width:1120px; width:100%}
+h1,h2,h3{font-family:Poppins, Inter, sans-serif; margin:0 0 12px}
+h1{font-size:clamp(36px,6vw,64px); line-height:1.05}
+h2{font-size:clamp(28px,4vw,40px); line-height:1.15}
+h3{font-size:22px}
+
+/* ===== Hero ===== */
+.hero{
+  background:url('../assets/img/hero.jpg') center/cover no-repeat;
+  text-align:left; position:relative;
+}
+.hero::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,.45)}
+.hero .inner{max-width:900px; position:relative; z-index:1}
+.hero p{opacity:.9; max-width:60ch}
+.scroll-indicator{display:inline-block; margin-top:24px; font-size:14px; color:var(--muted)}
+
+/* ===== Buttons ===== */
+.btn{
+  -webkit-appearance:none; appearance:none;
+  background:transparent; color:var(--fg);
+  border:1px solid var(--fg); border-radius:999px;
+  display:inline-block; padding:12px 18px; font-weight:600; line-height:1;
+  cursor:pointer; transition:background .2s ease, color .2s ease, border-color .2s ease, transform .1s ease;
+  text-decoration:none;
+}
+.btn:hover{background:var(--fg); color:var(--bg); text-decoration:none}
+.btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px; text-decoration:none}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.55; cursor:not-allowed}
+
+/* ===== Services ===== */
+.services .grid{display:grid; gap:20px; grid-template-columns:repeat(4,1fr); transition:filter .25s ease, opacity .25s ease}
+.card{border:1px solid var(--hair); padding:16px; border-radius:16px; background:var(--card); transition:transform .25s ease, box-shadow .25s ease; position:relative; overflow:hidden}
+.card:hover{transform:translateY(-4px) scale(1.02); box-shadow:0 18px 32px rgba(0,0,0,.28)}
+.card img{width:100%; height:180px; object-fit:cover; border-radius:10px; margin-bottom:12px}
+.services .grid.dim .card{opacity:.25; filter:blur(.6px); transform:none}
+
+/* ===== Fokus overlay (hover kartice) ===== */
+.card-focus{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.55); backdrop-filter: blur(2px); z-index:9999}
+.card-focus.active{display:flex; animation:fadeIn .18s ease both}
+@keyframes fadeIn{from{opacity:0} to{opacity:1}}
+.focus-card{
+  position:fixed; left:0; top:0; width:0; height:0; margin:0;
+  border:1px solid var(--hair); border-radius:16px; background:var(--card);
+  overflow:auto; box-shadow:0 28px 56px rgba(0,0,0,.45);
+  transition:left .35s ease, top .35s ease, width .35s ease, height .35s ease;
+}
+.focus-card img{width:100%; height:280px; object-fit:cover; border-radius:10px; margin:12px 12px 0}
+.focus-card h3{font-size:28px; margin:12px}
+.focus-card p{margin:0 12px 12px}
+.focus-card .card-more{margin:12px; padding-top:12px; border-top:1px dashed var(--hair); opacity:.95}
+
+/* ===== CSR ===== */
+.csr .logo-slider{display:none} /* partner logotipi uklonjeni */
+
+/* ===== Offices ===== */
+.offices .cols{display:grid; gap:24px; grid-template-columns:2fr 1fr}
+.offices-list{list-style:none; padding:0; margin:0}
+.offices-list li{padding:8px 0; border-bottom:1px dashed var(--hair)}
+.contact-block{border-left:1px solid var(--hair); padding-left:24px}
+
+/* ===== Contact page ===== */
+.contact-page{align-items:flex-start}
+.contact-page .inner{padding-top:32px}
+.contact-page.has-bg::before{background-image:url('../assets/img/pozadina3.jpg'); opacity:.22; filter:grayscale(10%)}
+.form{display:grid; gap:16px; max-width:820px}
+.form-grid{display:grid; gap:16px}
+@media (min-width:900px){ .form-grid{grid-template-columns:repeat(3,1fr)} }
+.field .label{display:block; margin-bottom:8px; font-weight:600; color:var(--fg); opacity:.95}
+.form input,.form textarea{width:100%; padding:12px 14px; border-radius:10px; border:1px solid var(--hair); background:#0c0e12; color:var(--fg)}
+.form input:focus,.form textarea:focus{outline:2px solid var(--accent); border-color:transparent}
+.form .consent{display:flex; align-items:center; gap:10px; font-size:14px; color:var(--muted)}
+.form .btn{width:100%}
+
+/* ===== Responsive ===== */
+@media (max-width:1200px){ .services .grid{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:900px){ .services .grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:560px){ .services .grid{grid-template-columns:1fr} }
+
+/* ===== Section background helpers ===== */
+.has-bg{ position:relative; }
+.has-bg::before{
+  content:""; position:absolute; inset:0;
+  background-size:cover; background-position:center; background-repeat:no-repeat;
+  opacity:.18; pointer-events:none; filter: grayscale(20%);
+}
+.about.has-bg::before{ background-image:url('../assets/img/about-bg.jpg'); }
+.offices.has-bg::before{ background-image:url('../assets/img/offices-bg.jpg'); }
+.services.has-bg::before{ background-image:url('../assets/img/pozadina1.jpg'); }
+.csr.has-bg::before{ background-image:url('../assets/img/pozadina2.jpg'); }
+.about .inner, .offices .inner, .services .inner, .csr .inner, .contact-page .inner{ position:relative; }
